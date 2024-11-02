@@ -47,6 +47,3 @@ jobs:
       - name: Publish to GitHub Pages 🚀
         id: deployment
         uses: actions/deploy-pages@v4
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}  # Ensure the token is passed
-          publish_dir: ./dist/data-tales/browser/  # Path to your build output
