@@ -19,11 +19,11 @@ jobs:
 
       - name: Build Angular app to prod
         working-directory: github-option-three-app
-        run: npm install && npm run build:prod
+        run: npm ci && npm run build && cp dist/data-tales/browser/index.html dist/data-tales/browser/404.html
 
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          folder: github-option-three-app/dist/browser
-          branch: prod
+          folder: dist/data-tales/browser/
+          branch: main
           token: ${{ secrets.GH_TOKEN }}
